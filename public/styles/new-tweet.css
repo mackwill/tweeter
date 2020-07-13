@@ -1,0 +1,35 @@
+section {
+  margin-top: 2rem;
+  width: 50%;
+}
+button {
+  background-color: #4056a1;
+  color: #ffffff;
+  border: none;
+}
+
+textarea {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  background-color: #f4f1ec;
+  height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+textarea::placeholder {
+  font-weight: bold;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+footer {
+  font-family: "Bungee", sans-serif;
+}
+output {
+  float: right;
+}
