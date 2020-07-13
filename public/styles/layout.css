@@ -31,5 +31,7 @@ main {
   display: flex;
   width: 90%;
   margin: auto;
-  justify-content: center;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
 }

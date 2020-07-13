@@ -1,0 +1,60 @@
+.all-tweets {
+  width: 100%;
+}
+
+.tweet {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submitted-tweet {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 3px solid black;
+  width: 100%;
+  background-color: #f4f1ec;
+  height: 2.5rem;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.tweet-footer {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.footer-right {
+  width: 10%;
+  justify-content: space-between;
+}
+
+.date-of-tweet {
+  font-size: 0.75rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+i {
+  font-size: 0.75rem;
+  color: black;
+}
+
+.tweet {
+  border: 3px solid black;
+  padding: 1rem;
+}
+.tweet:hover {
+  box-shadow: 5px 5px 2px lightgrey;
+}
+
+.username {
+  visibility: hidden;
+  color: grey;
+}

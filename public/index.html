@@ -17,11 +17,18 @@
       rel="stylesheet"
     />
 
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/761f8ea60c.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,6 +39,7 @@
       type="text/javascript"
       src="/scripts/composer-char-counter.js"
     ></script>
+    <script type="text/javascript" src="./scripts/show-user-name.js"></script>
   </head>
 
   <body>
@@ -40,13 +48,13 @@
       <span>tweeter</span>
     </nav>
 
-    <header>
+    <header id="page-header">
       <div>
         <img src="./images/profile-hex.png" />
       </div>
       <br />
       <div>
-        <h2>Your Name</h2>
+        <h2 id="your-name">Your Name</h2>
       </div>
     </header>
 
@@ -72,6 +80,60 @@
             >
           </footer>
         </form>
+      </section>
+      <section class="all-tweets">
+        <article class="tweet">
+          <header class="tweet-header">
+            <div class="tweet-header left">
+              <img src="./images/male-user.png" />
+              <p>Nicolas Cage</p>
+            </div>
+            <div class="tweet-header right">
+              <p class="username">@TheCage</p>
+            </div>
+          </header>
+          <form>
+            <p class="submitted-tweet">
+              Nicolas Cage is the king and supreme ruler of all
+            </p>
+            <footer>
+              <div class="tweet-footer footer-left">
+                <p class="date-of-tweet">10 days ago</p>
+              </div>
+              <div class="tweet-footer footer-right">
+                <a href="#"><i class="fas fa-flag"></i></a>
+                <a href="#"><i class="fas fa-retweet"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+              </div>
+            </footer>
+          </form>
+        </article>
+        <article class="tweet">
+          <header class="tweet-header">
+            <div class="tweet-header left">
+              <img src="./images/male-user.png" />
+              <p>Nicolas Cage</p>
+            </div>
+            <div class="tweet-header right">
+              <p class="username">@TheCage</p>
+            </div>
+          </header>
+          <form>
+            <p class="submitted-tweet">
+              Nicolas Cage is the king and supreme ruler of all
+            </p>
+            <footer>
+              <div class="tweet-footer footer-left">
+                <p class="date-of-tweet">10 days ago</p>
+              </div>
+              <div class="tweet-footer footer-right">
+                <a href="#"><i class="fas fa-flag"></i></a>
+                <a href="#"><i class="fas fa-retweet"></i></a>
+                <a href="#"><i class="fas fa-heart"></i></a>
+              </div>
+            </footer>
+          </form>
+        </article>
       </section>
     </main>
   </body>

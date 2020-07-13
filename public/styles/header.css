@@ -1,4 +1,4 @@
-header {
+#page-header {
   height: 400px;
   width: 100%;
   display: flex;
@@ -7,4 +7,9 @@ header {
   flex-direction: column;
   background-color: #f09f27;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  padding-top: 1rem;
+}
+
+#your-name {
+  color: white;
 }

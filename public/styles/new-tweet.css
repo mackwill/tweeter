@@ -1,6 +1,7 @@
-section {
+.new-tweet {
   margin-top: 2rem;
-  width: 70%;
+  width: 60%;
+  margin-bottom: 2rem;
 }
 button {
   background-color: #4056a1;
@@ -12,7 +13,7 @@ textarea {
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid black;
   width: 100%;
   background-color: #f4f1ec;
   height: 2.5rem;
@@ -32,4 +33,5 @@ footer {
   display: flex;
   font-family: "Bungee", sans-serif;
   justify-content: space-between;
+  align-items: center;
 }
