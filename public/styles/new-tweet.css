@@ -1,6 +1,6 @@
 section {
   margin-top: 2rem;
-  width: 50%;
+  width: 70%;
 }
 button {
   background-color: #4056a1;
@@ -16,10 +16,11 @@ textarea {
   width: 100%;
   background-color: #f4f1ec;
   height: 2.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 textarea::placeholder {
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -28,8 +29,7 @@ textarea:focus {
 }
 
 footer {
+  display: flex;
   font-family: "Bungee", sans-serif;
-}
-output {
-  float: right;
+  justify-content: space-between;
 }
