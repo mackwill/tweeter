@@ -1,9 +1,9 @@
 $(document).ready(() => {
   const showUserName = function (event) {
-    $(".username").css("visibility", "visible");
+    $(this).find(".username").css("visibility", "visible");
   };
   const hideUserName = function (event) {
-    $(".username").css("visibility", "hidden");
+    $(this).find(".username").css("visibility", "hidden");
   };
 
   $(".tweet").on("mouseover", showUserName);
