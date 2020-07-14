@@ -11,7 +11,14 @@ const findDaysAgo = (tweetDate) => {
   return Math.floor((today - tweetDate) / msInDay);
 };
 
+const escape = (str) => {
+  const div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = (tweetObj) => {
+  console.log(tweetObj);
   const header = `<header class="tweet-header">
       <div class="tweet-header left">
         <img src="${tweetObj.user.avatars}" />
@@ -63,14 +70,20 @@ const submitHandler = function (event) {
 
   const tempTweet = $(this).children("textarea").val();
 
+  $(this).children("textarea").val(escape(tempTweet));
+
   if (tempTweet === "" || tempTweet === null) {
-    alert("Please enter something in the tweet field");
+    $("#alert")
+      .html(`Please enter something in the tweet field`)
+      .css("display", "flex");
     return;
   } else if (tempTweet.length > 140) {
-    alert("Please limit your tweet to 140 characters");
+    $("#alert")
+      .html(`Please limit your tweet to 140 characters`)
+      .css("display", "flex");
     return;
   }
-
+  $("#alert").css("display", "none").html("");
   console.log("Nicolas Cage is making an AJAX request");
 
   $.post("/tweets", $("#submit-new-tweet").serialize()).then(() => {
@@ -80,10 +93,21 @@ const submitHandler = function (event) {
       $("#all-tweets").prepend(createTweetElement(newTweet));
     });
   });
+  $(this).children("textarea").val("");
 };
 
 $(document).ready(() => {
   $("#submit-new-tweet").on("submit", submitHandler);
+
+  const showUserName = function (event) {
+    $(this).find(".username").css("visibility", "visible");
+  };
+  const hideUserName = function (event) {
+    $(this).find(".username").css("visibility", "hidden");
+  };
+
+  $(".all-tweets").on("mouseenter", ".tweet", showUserName);
+  $(".all-tweets").on("mouseleave", ".tweet", hideUserName);
 
   const loadTweets = () => {
     $.get("/tweets", (data) => {

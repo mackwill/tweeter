@@ -1,0 +1,10 @@
+#alert {
+  width: 100%;
+  border: 3px solid red;
+  display: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  font-size: 1.25rem;
+}

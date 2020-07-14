@@ -1,11 +1,13 @@
-$(document).ready(() => {
-  const showUserName = function (event) {
-    $(this).find(".username").css("visibility", "visible");
-  };
-  const hideUserName = function (event) {
-    $(this).find(".username").css("visibility", "hidden");
-  };
+// // $("#all-tweets").ready(() => {
+// $(document).on("ready", () => {
+//   const showUserName = function (event) {
+//     console.log("show", event);
+//     $(this).find(".username").css("visibility", "visible");
+//   };
+//   const hideUserName = function (event) {
+//     $(this).find(".username").css("visibility", "hidden");
+//   };
 
-  $(".tweet").on("mouseover", showUserName);
-  $(".tweet").on("mouseleave", hideUserName);
-});
+//   $(document).on("mouseover", $(".tweet"), showUserName);
+//   $(document).on("mouseleave", $(".tweet"), hideUserName);
+// });
