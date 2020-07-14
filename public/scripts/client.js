@@ -11,6 +11,15 @@ const findDaysAgo = (tweetDate) => {
   return Math.floor((today - tweetDate) / msInDay);
 };
 
+const submitHandler = (event) => {
+  event.preventDefault();
+  console.log("Nicolas Cage is making an AJAX request");
+
+  $.post("/tweets", $("#submit-new-tweet").serialize()).then(() => {
+    console.log("We won the game");
+  });
+};
+
 const createTweetElement = (tweetObj) => {
   const header = `<header class="tweet-header">
       <div class="tweet-header left">
@@ -48,7 +57,7 @@ const createTweetElement = (tweetObj) => {
   return newTweet;
 };
 
-const data = [
+const tweet = [
   {
     "user": {
       "name": "Newton",
@@ -75,11 +84,27 @@ const data = [
 ];
 
 $(document).ready(() => {
+  $("#submit-new-tweet").on("submit", submitHandler);
+
   const renderTweets = (tweets) => {
     tweets.forEach((tweet) => {
       $(".all-tweets").append(createTweetElement(tweet));
     });
   };
 
-  renderTweets(data);
+  const loadTweets = () => {
+    $.get("/tweets", (data) => {
+      console.log("data: ", data);
+    })
+      .then((data) => {
+        console.log("Success");
+
+        renderTweets(data);
+      })
+      .then(() => {
+        console.log("Nicolas Cage rendered your tweets");
+      });
+  };
+
+  loadTweets();
 });
