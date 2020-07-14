@@ -1,0 +1,21 @@
+#scroll-button-container {
+  display: none;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: red;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+#scroll-button {
+  text-decoration: none;
+}
+
+#scroll-button i {
+  display: flex;
+  color: #ffffff;
+  font-size: 2rem;
+}

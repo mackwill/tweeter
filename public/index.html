@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
     <link rel="stylesheet" href="/styles/alert.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/scroll-button.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -41,7 +42,6 @@
       src="/scripts/composer-char-counter.js"
     ></script>
     <script type="text/javascript" src="./scripts/show-user-name.js"></script>
-    <script type="text/javascript" src="./scripts/show-new-tweet.js"></script>
   </head>
 
   <body>
@@ -68,6 +68,11 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div id="scroll-button-container">
+        <a href="#" id="scroll-button">
+          <i class="fas fa-angle-double-up"></i
+        ></a>
+      </div>
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
         <form method="POST" action="/tweets" id="submit-new-tweet">

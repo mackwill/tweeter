@@ -100,7 +100,7 @@ const submitHandler = function (event) {
   $(this).children("textarea").val("");
 };
 
-const newTweetClick = function (event) {
+const newTweetHandler = function (event) {
   const newTweet = $(this).parents().find(".new-tweet");
   const textArea = $(this).parents().find("textarea");
 
@@ -113,10 +113,19 @@ const newTweetClick = function (event) {
   return;
 };
 
+const scrollHandler = function (event) {
+  if ($(window).scrollTop() !== 0) {
+    $("#scroll-button-container").show().css("display", "flex");
+  } else {
+    $("#scroll-button-container").hide();
+  }
+};
+
 $(document).ready(() => {
   $("#submit-new-tweet").on("submit", submitHandler);
+  $(window).on("scroll", scrollHandler);
 
-  $(document).on("click", "#write-new-tweet", newTweetClick);
+  $(document).on("click", "#write-new-tweet", newTweetHandler);
 
   const showUserName = function (event) {
     $(this).find(".username").css("visibility", "visible");
