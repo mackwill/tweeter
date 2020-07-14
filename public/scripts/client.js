@@ -75,12 +75,16 @@ const submitHandler = function (event) {
   if (tempTweet === "" || tempTweet === null) {
     $("#alert")
       .html(`Please enter something in the tweet field`)
+      .slideDown("slow")
       .css("display", "flex");
+
     return;
   } else if (tempTweet.length > 140) {
     $("#alert")
       .html(`Please limit your tweet to 140 characters`)
+      .slideDown("slow")
       .css("display", "flex");
+
     return;
   }
   $("#alert").css("display", "none").html("");
