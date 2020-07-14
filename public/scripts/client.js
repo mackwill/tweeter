@@ -11,15 +11,6 @@ const findDaysAgo = (tweetDate) => {
   return Math.floor((today - tweetDate) / msInDay);
 };
 
-const submitHandler = (event) => {
-  event.preventDefault();
-  console.log("Nicolas Cage is making an AJAX request");
-
-  $.post("/tweets", $("#submit-new-tweet").serialize()).then(() => {
-    console.log("We won the game");
-  });
-};
-
 const createTweetElement = (tweetObj) => {
   const header = `<header class="tweet-header">
       <div class="tweet-header left">
@@ -57,40 +48,42 @@ const createTweetElement = (tweetObj) => {
   return newTweet;
 };
 
-const tweet = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac",
-    },
-    "content": {
-      "text":
-        "If I have seen further it is by standing on the shoulders of giants",
-    },
-    "created_at": 1461116232227,
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd",
-    },
-    "content": {
-      "text": "Je pense , donc je suis",
-    },
-    "created_at": 1461113959088,
-  },
-];
+// const checkIfTweetIsGood = tweet => {
+//   if
+// }
+
+const renderTweets = (tweets) => {
+  tweets.forEach((tweet) => {
+    $(".all-tweets").append(createTweetElement(tweet));
+  });
+};
+
+const submitHandler = function (event) {
+  event.preventDefault();
+
+  const tempTweet = $(this).children("textarea").val();
+
+  if (tempTweet === "" || tempTweet === null) {
+    alert("Please enter something in the tweet field");
+    return;
+  } else if (tempTweet.length > 140) {
+    alert("Please limit your tweet to 140 characters");
+    return;
+  }
+
+  console.log("Nicolas Cage is making an AJAX request");
+
+  $.post("/tweets", $("#submit-new-tweet").serialize()).then(() => {
+    $.get("/tweets", (data) => {
+      const newTweet = data[data.length - 1];
+      console.log(newTweet);
+      $("#all-tweets").prepend(createTweetElement(newTweet));
+    });
+  });
+};
 
 $(document).ready(() => {
   $("#submit-new-tweet").on("submit", submitHandler);
-
-  const renderTweets = (tweets) => {
-    tweets.forEach((tweet) => {
-      $(".all-tweets").append(createTweetElement(tweet));
-    });
-  };
 
   const loadTweets = () => {
     $.get("/tweets", (data) => {
