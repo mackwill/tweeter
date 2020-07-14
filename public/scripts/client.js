@@ -100,8 +100,23 @@ const submitHandler = function (event) {
   $(this).children("textarea").val("");
 };
 
+const newTweetClick = function (event) {
+  const newTweet = $(this).parents().find(".new-tweet");
+  const textArea = $(this).parents().find("textarea");
+
+  if ($(newTweet).css("display") === "none") {
+    $(newTweet).slideDown("slow");
+    $(textArea).focus();
+    return;
+  }
+  $(newTweet).slideUp("slow");
+  return;
+};
+
 $(document).ready(() => {
   $("#submit-new-tweet").on("submit", submitHandler);
+
+  $(document).on("click", "#write-new-tweet", newTweetClick);
 
   const showUserName = function (event) {
     $(this).find(".username").css("visibility", "visible");

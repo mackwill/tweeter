@@ -1,12 +1,59 @@
+/* Creates bounce animation to be bound to the icon */
+@keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(8px);
+  }
+
+  80% {
+    transform: translateY(3px);
+  }
+}
+
 nav {
+  display: flex;
   height: 120px;
   background-color: #4056a1;
   color: #ffffff;
   padding: 1.5em;
   position: sticky;
   top: 0;
+  justify-content: space-between;
+  align-items: center;
 }
 
 span {
   font-family: "Bungee", sans-serif;
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-right a {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-right i {
+  position: relative;
+  top: 0;
+  font-size: 1.25rem;
+  color: orange;
+}
+
+.navbar-right:hover > i {
+  animation: bounce 1s;
+  animation-iteration-count: infinite;
 }

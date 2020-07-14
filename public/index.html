@@ -41,12 +41,19 @@
       src="/scripts/composer-char-counter.js"
     ></script>
     <script type="text/javascript" src="./scripts/show-user-name.js"></script>
+    <script type="text/javascript" src="./scripts/show-new-tweet.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="navbar-left">
+        <span>tweeter</span>
+      </div>
+      <div class="navbar-right">
+        <a id="write-new-tweet" href="#"><strong>Write</strong> a new tweet</a>
+        <i class="fas fa-angle-double-down"></i>
+      </div>
     </nav>
 
     <header id="page-header">

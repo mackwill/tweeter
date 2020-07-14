@@ -2,6 +2,7 @@
   margin-top: 2rem;
   width: 60%;
   margin-bottom: 2rem;
+  display: none;
 }
 button {
   background-color: #4056a1;
