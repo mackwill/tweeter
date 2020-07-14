@@ -3,6 +3,8 @@ nav {
   background-color: #4056a1;
   color: #ffffff;
   padding: 1.5em;
+  position: sticky;
+  top: 0;
 }
 
 span {
