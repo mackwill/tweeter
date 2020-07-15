@@ -1,5 +1,9 @@
-import { escape, createTweetElement } from "./helpers.js";
-export const tweetChangeHandler = function (event) {
+import { escape, createTweetElement, renderTweets } from "./helpers.js";
+
+// Track the number of characters entered into the
+// new tweet box and change the counter to red
+// if characters are longer than 140.
+export const tweetCharHandler = function (event) {
   let textLength = 140 - this.value.length;
 
   $(`[for=${this.id}]`).text(`${140 - this.value.length}`);
@@ -11,6 +15,31 @@ export const tweetChangeHandler = function (event) {
   }
 };
 
+// Check whether the tweet is empty or if it is
+// longer than 140 characters and display the
+// appropriate error message
+
+const presentAlert = (tempTweet) => {
+  if (tempTweet === "" || tempTweet === null) {
+    $("#alert")
+      .html(`Please enter something in the tweet field`)
+      .slideDown("slow")
+      .css("display", "flex");
+
+    return true;
+  } else if (tempTweet.length > 140) {
+    $("#alert")
+      .html(`Please limit your tweet to 140 characters`)
+      .slideDown("slow")
+      .css("display", "flex");
+
+    return true;
+  }
+  return false;
+};
+
+// Check if the tweets are properly entered
+// and then post to tweets if they are
 export const submitHandler = function (event) {
   event.preventDefault();
 
@@ -18,35 +47,25 @@ export const submitHandler = function (event) {
 
   $(this).children("textarea").val(escape(tempTweet));
 
-  if (tempTweet === "" || tempTweet === null) {
-    $("#alert")
-      .html(`Please enter something in the tweet field`)
-      .slideDown("slow")
-      .css("display", "flex");
+  const alert = presentAlert(tempTweet);
 
-    return;
-  } else if (tempTweet.length > 140) {
-    $("#alert")
-      .html(`Please limit your tweet to 140 characters`)
-      .slideDown("slow")
-      .css("display", "flex");
+  if (alert) return;
 
-    return;
-  }
   $("#alert").css("display", "none").html("");
-  console.log("Nicolas Cage is making an AJAX request");
 
   $.post("/tweets", $("#submit-new-tweet").serialize()).then(() => {
     $.get("/tweets", (data) => {
-      const newTweet = data[data.length - 1];
-      console.log(newTweet);
-      $("#all-tweets").prepend(createTweetElement(newTweet));
+      $("#all-tweets").empty();
+      renderTweets(data);
     });
   });
+
   $(this).children("textarea").val("");
 };
 
-export const newTweetHandler = function (event) {
+// If the window is not in desktop mode, then scroll out/up
+// the new tweet area when Write a new tweet is clicked
+export const newTweetHandler = function () {
   const newTweet = $(this).parents().find(".new-tweet");
   const textArea = $(this).parents().find("textarea");
 
@@ -54,12 +73,17 @@ export const newTweetHandler = function (event) {
     $(newTweet).slideDown("slow");
     $(textArea).focus();
     return;
+  } else if ($(window).width() < 1024) {
+    $(newTweet).slideUp("slow");
+    return;
   }
-  $(newTweet).slideUp("slow");
+
+  $(textArea).focus();
+
   return;
 };
 
-export const scrollHandler = function (event) {
+export const scrollHandler = function () {
   if ($(window).scrollTop() !== 0) {
     $("#scroll-button-container").show().css("display", "flex");
   } else {
@@ -67,16 +91,11 @@ export const scrollHandler = function (event) {
   }
 };
 
+// Show and hide the username of the user when hovering over
+// the tweet and then leaving
 export const showUserName = function (event) {
   $(this).find(".username").css("visibility", "visible");
 };
 export const hideUserName = function (event) {
   $(this).find(".username").css("visibility", "hidden");
 };
-
-// module.exports = {
-//   tweetChangeHandler,
-//   submitHandler,
-//   newTweetHandler,
-//   scrollHandler,
-// };

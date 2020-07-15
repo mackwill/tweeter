@@ -5,7 +5,7 @@
  */
 
 import {
-  tweetChangeHandler,
+  tweetCharHandler,
   submitHandler,
   newTweetHandler,
   scrollHandler,
@@ -15,28 +15,21 @@ import {
 import { renderTweets } from "./helpers.js";
 
 $(document).ready(() => {
+  // Bind all click listeners from event-handlers.js to respecive elements
   $("#submit-new-tweet").on("submit", submitHandler);
-  $("#tweet-text").on("keyup", tweetChangeHandler);
+  $("#tweet-text").on("keyup", tweetCharHandler);
+  $(".all-tweets").on("mouseenter", ".tweet", showUserName);
+  $(".all-tweets").on("mouseleave", ".tweet", hideUserName);
 
   $(window).on("scroll", scrollHandler);
 
   $(document).on("click", "#write-new-tweet", newTweetHandler);
 
-  $(".all-tweets").on("mouseenter", ".tweet", showUserName);
-  $(".all-tweets").on("mouseleave", ".tweet", hideUserName);
-
+  // Load all of the tweets in the "database" and render them to the front page
   const loadTweets = () => {
     $.get("/tweets", (data) => {
-      console.log("data: ", data);
-    })
-      .then((data) => {
-        console.log("Success");
-
-        renderTweets(data);
-      })
-      .then(() => {
-        console.log("Nicolas Cage rendered your tweets");
-      });
+      renderTweets(data);
+    });
   };
 
   loadTweets();
