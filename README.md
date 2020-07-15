@@ -4,6 +4,12 @@ Tweeter is a simple, single-page Twitter clone allowing users to see the tweets 
 
 ## Final Product
 
+!["Screenshot of desktop mode"](https://github.com/mackwill/tweeter/blob/master/docs/desktop-view.png)
+
+!["Screenshot of long tweet"](https://github.com/mackwill/tweeter/blob/master/docs/long-tweet.png)
+
+!["Screenshot of tablet mode"](https://github.com/mackwill/tweeter/blob/master/docs/tablet-view.png)
+
 ## Dependencies
 
 - Express
