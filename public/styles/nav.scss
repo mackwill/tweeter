@@ -49,11 +49,12 @@ nav {
       top: 0;
       font-size: 1.25rem;
     }
-    .navbar-right:hover > i {
-      animation: bounce 1s;
-      animation-iteration-count: infinite;
-    }
   }
+}
+
+.navbar-right:hover > i {
+  animation: bounce 1s;
+  animation-iteration-count: infinite;
 }
 
 span {
