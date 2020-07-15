@@ -1,3 +1,8 @@
+@mixin position($property) {
+  position: relative;
+  top: $property;
+}
+
 #page-header {
   height: 400px;
   width: 100%;
@@ -8,13 +13,14 @@
   background-color: #f09f27;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   padding-top: 1rem;
-}
-#page-header img {
-  position: relative;
-  top: 30px;
-}
-#page-header #your-name {
-  color: white;
+
+  img {
+    @include position(30px);
+  }
+
+  #your-name {
+    color: white;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -22,5 +28,3 @@
     border-radius: 5%;
   }
 }
-
-/*# sourceMappingURL=header.css.map */

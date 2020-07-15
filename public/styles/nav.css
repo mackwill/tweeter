@@ -1,21 +1,14 @@
-/* Creates bounce animation to be bound to the icon */
 @keyframes bounce {
-  0%,
-  20%,
-  60%,
-  100% {
+  0%, 20%, 60%, 100% {
     transform: translateY(0);
   }
-
   40% {
     transform: translateY(8px);
   }
-
   80% {
     transform: translateY(3px);
   }
 }
-
 nav {
   display: flex;
   height: 80px;
@@ -28,36 +21,31 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-
-span {
-  font-family: "Bungee", sans-serif;
-  font-size: 2rem;
-}
-
-.navbar-right {
+nav .navbar-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-.navbar-right a {
+nav .navbar-right a {
   font-size: 1.25rem;
   margin-bottom: 0.25rem;
   color: #ffffff;
   text-decoration: none;
 }
-
-.navbar-right i {
+nav .navbar-right i {
   position: relative;
   top: 0;
   font-size: 1.25rem;
-  color: orange;
 }
-
-.navbar-right:hover > i {
+nav .navbar-right .navbar-right:hover > i {
   animation: bounce 1s;
   animation-iteration-count: infinite;
+}
+
+span {
+  font-family: "Bungee", sans-serif;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -65,4 +53,9 @@ span {
     background-color: #4056a1;
     background-image: none;
   }
+  nav i {
+    color: #f09f27;
+  }
 }
+
+/*# sourceMappingURL=nav.css.map */

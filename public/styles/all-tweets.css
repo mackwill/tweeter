@@ -1,16 +1,40 @@
 .all-tweets {
   width: 100%;
 }
-
-.tweet {
+.all-tweets .tweet {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  border: 3px solid black;
+  padding: 1rem;
 }
-
-.tweet-header {
+.all-tweets .tweet .tweet-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.all-tweets .tweet .tweet-footer {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+.all-tweets .tweet .tweet-footer .date-of-tweet {
+  font-size: 0.75rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.all-tweets .username {
+  visibility: hidden;
+  color: grey;
+}
+.all-tweets .footer-right {
+  width: 10%;
+  justify-content: space-between;
+}
+.all-tweets a {
+  font-size: 0.75rem;
+  color: black;
+}
+.all-tweets .tweet:hover {
+  box-shadow: 5px 5px 2px lightgrey;
 }
 
 .submitted-tweet {
@@ -25,36 +49,4 @@
   margin-bottom: 0;
 }
 
-.tweet-footer {
-  display: flex;
-  align-items: center;
-  height: auto;
-}
-
-.footer-right {
-  width: 10%;
-  justify-content: space-between;
-}
-
-.date-of-tweet {
-  font-size: 0.75rem;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-i {
-  font-size: 0.75rem;
-  color: black;
-}
-
-.tweet {
-  border: 3px solid black;
-  padding: 1rem;
-}
-.tweet:hover {
-  box-shadow: 5px 5px 2px lightgrey;
-}
-
-.username {
-  visibility: hidden;
-  color: grey;
-}
+/*# sourceMappingURL=all-tweets.css.map */

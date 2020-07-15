@@ -33,9 +33,9 @@ export const createTweetElement = (tweetObj) => {
           )} days ago</p>
         </div>
         <div class="tweet-footer footer-right">
-          <a href="#"><i class="fas fa-flag"></i></a>
-          <a href="#"><i class="fas fa-retweet"></i></a>
-          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-flag footer-icon"></i></a>
+          <a href="#"><i class="fas fa-retweet footer-icon"></i></a>
+          <a href="#"><i class="fas fa-heart footer-icon"></i></a>
         </div>
       </footer>
     </form>`;

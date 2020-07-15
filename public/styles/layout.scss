@@ -3,21 +3,26 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+$standardFont: "Source Sans Pro", sans-serif;
+$bodyWhite: #f4f1ec;
+
 html {
   box-sizing: border-box;
-}
-html body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 24px;
-}
-html body .container {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  align-items: center;
-  flex-direction: column;
+
+  body {
+    color: #545149;
+    background-color: $bodyWhite;
+    font-family: $standardFont;
+    font-size: 24px;
+
+    .container {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
 }
 
 *,
@@ -34,15 +39,15 @@ html body .container {
     margin: 5rem auto;
     align-items: flex-start;
     justify-content: space-between;
-  }
-  main header {
-    flex-basis: 30%;
-  }
-  main .container {
-    flex-basis: 60%;
-    margin-left: 0;
-    margin-right: 0;
+
+    header {
+      flex-basis: 30%;
+    }
+
+    .container {
+      flex-basis: 60%;
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }
-
-/*# sourceMappingURL=layout.css.map */
