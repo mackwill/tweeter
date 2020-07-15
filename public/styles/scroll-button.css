@@ -3,7 +3,9 @@
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #f09f27;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
   position: fixed;
   bottom: 1rem;
   right: 1rem;

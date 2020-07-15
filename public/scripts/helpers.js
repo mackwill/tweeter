@@ -48,8 +48,23 @@ export const createTweetElement = (tweetObj) => {
   return newTweet;
 };
 
+const sortTweetsByDate = (current, next) => {
+  const first = current.created_at;
+  const second = next.created_at;
+
+  if (first > second) {
+    return 1;
+  } else if (first < second) {
+    return -1;
+  }
+  return 0;
+};
+
 export const renderTweets = (tweets) => {
+  // const sortedTweets = tweets.sort(sortTweetsByDate);
+  // console.log("original: ", tweets);
+  // console.log("sorted: ", sortedTweets);
   tweets.forEach((tweet) => {
-    $(".all-tweets").append(createTweetElement(tweet));
+    $(".all-tweets").prepend(createTweetElement(tweet));
   });
 };

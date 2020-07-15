@@ -38,6 +38,6 @@ $(document).ready(() => {
         console.log("Nicolas Cage rendered your tweets");
       });
   };
-  å;
+
   loadTweets();
 });

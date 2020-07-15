@@ -1,6 +1,6 @@
 .new-tweet {
   margin-top: 2rem;
-  width: 60%;
+  width: 100%;
   margin-bottom: 2rem;
   display: none;
 }
@@ -35,4 +35,11 @@ footer {
   font-family: "Bungee", sans-serif;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    display: block;
+    margin-top: 0;
+  }
 }

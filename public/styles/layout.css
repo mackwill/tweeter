@@ -27,11 +27,37 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
+.main {
+  column-count: 1;
+  column-width: 100%;
+}
+
+.container {
   display: flex;
   width: 90%;
   margin: auto;
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 5rem auto;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  header {
+    flex-basis: 30%;
+  }
+
+  .container {
+    flex-basis: 60%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
