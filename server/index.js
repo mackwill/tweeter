@@ -6,6 +6,8 @@ const PORT = 8080;
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -32,12 +34,12 @@ const users = {
   "NicolasCageSupreme": {
     id: "NicolasCageSupreme",
     email: "thenicolascage@thecage.com",
-    password: "the-cage",
+    password: bcrypt.hashSync("the-king", saltRounds),
   },
   "JonSnow": {
     id: "JonSnow",
     email: "snowyguy@thesnow.com",
-    password: "the-snow",
+    password: bcrypt.hashSync("the-snow", saltRounds),
   },
 };
 
@@ -50,8 +52,18 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-  console.log("req body", req.body);
+  // const { username, password } = req.body;
+  console.log(req.body);
+  const username = req.body.username;
+  const plainPass = req.body.password;
+  const hashPass = bcrypt
+    .hash(req.body.password, saltRounds)
+    .then((hash) => hash)
+    .then((hash) => console.log("hashpass:", hash));
+
+  console.log("plainPass: ", plainPass);
+  console.log("hash pass: ", hashPass);
+
   if (users[username] && users[username].password === password) {
     console.log("Success!");
     res.redirect("/");
