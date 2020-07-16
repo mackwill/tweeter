@@ -1,13 +1,11 @@
 #page-header {
   height: 400px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  z-index: 50;
   background-color: #f09f27;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   padding-top: 1rem;
+  position: relative;
 }
 #page-header img {
   position: relative;
@@ -15,6 +13,15 @@
 }
 #page-header #your-name {
   color: white;
+}
+
+#page-header > div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 1024px) {
