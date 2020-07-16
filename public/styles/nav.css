@@ -41,15 +41,19 @@ nav .navbar-right i {
 }
 nav .navbar-right .nav-button {
   background-color: transparent;
-  border: 1px solid white;
+  border: 2px solid white;
   color: #ffffff;
   margin: 0 0.4rem 0 0.4rem;
-  border-radius: 0.1rem;
+  border-radius: 0.3rem;
+  padding: 0.4rem;
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
 }
 
 .navbar-right:hover > i {
-  animation: bounce 1s;
-  animation-iteration-count: infinite;
+  transform: scale(1.1);
 }
 
 span {
