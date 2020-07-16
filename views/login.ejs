@@ -7,10 +7,6 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-      <!--
-      External
-      CSS
-      --
     />
     <link
       rel="stylesheet"
@@ -56,15 +52,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <div class="navbar-left">
-        <span>tweeter</span>
-      </div>
-      <div class="navbar-right">
-        <a id="write-new-tweet" href="#"><strong>Write</strong> a new tweet</a>
-        <i class="fas fa-angle-double-down"></i>
-      </div>
-    </nav>
+    <%- include("partials/_nav") %>
     <main>
       <div id="login-wrapper">
         <form method="POST" action="/login">
@@ -92,6 +80,8 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
+
+      <div class="alert alert-warning d-none"></div>
     </main>
 
     <script
