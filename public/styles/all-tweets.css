@@ -28,6 +28,7 @@
 .all-tweets .footer-right {
   width: 10%;
   justify-content: space-between;
+  visibility: hidden;
 }
 .all-tweets a {
   font-size: 0.75rem;

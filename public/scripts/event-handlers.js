@@ -61,6 +61,7 @@ export const submitHandler = function (event) {
   });
 
   $(this).children("textarea").val("");
+  $($(this).parent().find("output")).text("140");
 };
 
 // If the window is not in desktop mode, then scroll out/up
@@ -91,11 +92,13 @@ export const scrollHandler = function () {
   }
 };
 
-// Show and hide the username of the user when hovering over
-// the tweet and then leaving
+// Show and hide the username and icons of the user
+// when hovering over the tweet and then leaving
 export const showUserName = function (event) {
   $(this).find(".username").css("visibility", "visible");
+  $(this).find(".footer-right").css("visibility", "visible");
 };
 export const hideUserName = function (event) {
   $(this).find(".username").css("visibility", "hidden");
+  $(this).find(".footer-right").css("visibility", "hidden");
 };
