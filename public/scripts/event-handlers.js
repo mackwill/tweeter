@@ -1,9 +1,9 @@
-import { escape, createTweetElement, renderTweets } from "./helpers.js";
+import { escape, renderTweets } from "./helpers.js";
 
 // Track the number of characters entered into the
 // new tweet box and change the counter to red
 // if characters are longer than 140.
-export const tweetCharHandler = function (event) {
+export const tweetCharHandler = function() {
   let textLength = 140 - this.value.length;
 
   $(`[for=${this.id}]`).text(`${140 - this.value.length}`);
@@ -40,7 +40,7 @@ const presentAlert = (tempTweet) => {
 
 // Check if the tweets are properly entered
 // and then post to tweets if they are
-export const submitHandler = function (event) {
+export const submitHandler = function(event) {
   event.preventDefault();
 
   const tempTweet = $(this).children("textarea").val();
@@ -66,7 +66,7 @@ export const submitHandler = function (event) {
 
 // If the window is not in desktop mode, then scroll out/up
 // the new tweet area when Write a new tweet is clicked
-export const newTweetHandler = function () {
+export const newTweetHandler = function() {
   const newTweet = $(this).parents().find(".new-tweet");
   const textArea = $(this).parents().find("textarea");
 
@@ -84,7 +84,7 @@ export const newTweetHandler = function () {
   return;
 };
 
-export const scrollHandler = function () {
+export const scrollHandler = function() {
   if ($(window).scrollTop() !== 0) {
     $("#scroll-button-container").show().css("display", "flex");
   } else {
@@ -94,11 +94,11 @@ export const scrollHandler = function () {
 
 // Show and hide the username and icons of the user
 // when hovering over the tweet and then leaving
-export const showUserName = function (event) {
+export const showUserName = function() {
   $(this).find(".username").css("visibility", "visible");
   $(this).find(".footer-right").css("visibility", "visible");
 };
-export const hideUserName = function (event) {
+export const hideUserName = function() {
   $(this).find(".username").css("visibility", "hidden");
   $(this).find(".footer-right").css("visibility", "hidden");
 };

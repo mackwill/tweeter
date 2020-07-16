@@ -18,5 +18,10 @@
   },
   "devDependencies": {
     "nodemon": "^1.9.2"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module"
+    }
   }
 }

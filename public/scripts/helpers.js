@@ -33,8 +33,8 @@ export const createTweetElement = (tweetObj) => {
       <footer>
         <div class="tweet-footer footer-left">
           <p class="date-of-tweet">${findDaysAgo(
-            tweetObj.created_at
-          )} days ago</p>
+    tweetObj.created_at
+  )} days ago</p>
         </div>
         <div class="tweet-footer footer-right">
           <a href="#"><i class="fas fa-flag footer-icon"></i></a>
