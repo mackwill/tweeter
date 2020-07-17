@@ -61,15 +61,20 @@ const users = {
 app.use("/tweets", tweetsRoutes);
 
 app.get("/login", (req, res) => {
-  // console.log("response", req);
   res.render("login");
 });
 
 app.get("/", (req, res) => {
-  // console.log("response", req);
-  console.log("req body", req.body);
-  res.render("home-page");
-  console.log("get session", req.session);
+  const user = req.session.username;
+  let templateVars = {};
+
+  if (user === undefined) {
+    templateVars = { user: undefined, error: "Visitor" };
+  } else {
+    templateVars = { user: user, error: null };
+  }
+  // if ()
+  res.render("home-page", templateVars);
 });
 
 const authenticateUser = (enteredPass, storedPass) => {
@@ -91,10 +96,9 @@ app.post("/login", (req, res) => {
     console.log("Login Failed!");
     return;
   }
-  templateVars = { user: users[username], error: null };
+
   req.session.username = users[username];
-  res.render("home-page", templateVars);
-  return;
+  res.redirect("/");
 });
 
 app.listen(PORT, () => {

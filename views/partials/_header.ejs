@@ -5,9 +5,13 @@
     </div>
     <br />
     <div>
-      <% console.log('username: ', user.name) %> <% console.log('user: ', user)
-      %>
+      <% if (error === null) { %>
+
       <h2 id="your-name"><%= user.firstName + ' ' + user.lastName%></h2>
+
+      <% } else { %>
+      <h2 id="your-name">Hello Visitor</h2>
+      <% } %>
     </div>
   </div>
 </header>
