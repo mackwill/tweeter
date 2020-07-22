@@ -7,11 +7,11 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-      <!--
+    />
+    <!--
       External
       CSS
-      --
-    />
+      -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -53,6 +53,12 @@
         <span>tweeter</span>
       </div>
       <div class="navbar-right">
+        <form method="GET" action="/login">
+          <button class="nav-button">Login</button>
+        </form>
+        <form>
+          <button class="nav-button">Register</button>
+        </form>
         <a id="write-new-tweet" href="#"><strong>Write</strong> a new tweet</a>
         <i class="fas fa-angle-double-down"></i>
       </div>

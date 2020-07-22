@@ -2,8 +2,7 @@
   {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
+      "avatars": "https://i.imgur.com/73hZDYK.png",
       "handle": "@SirIsaac"
     },
     "content": {
@@ -15,10 +14,33 @@
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
     "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "NicCage",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@theCage"
+    },
+    "content": {
+      "text": "I am but a humble servant of the Cage"
+    },
+    "created_at": 1461895359088
+  },
+  {
+    "user": {
+      "name": "AryaStark",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@theKnife"
+    },
+    "content": {
+      "text": "The Whitewalkers were a let down"
+    },
+    "created_at": 1541895806487
   }
 ]

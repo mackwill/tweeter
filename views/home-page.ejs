@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <!--
+      External
+      CSS
+      -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+
+    <!-- Custom Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/761f8ea60c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/alert.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/scroll-button.css" type="text/css" />
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <script type="module" src="/scripts/client.js"></script>
+  </head>
+
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <%- include("partials/_nav") %>
+
+    <main>
+      <%- include("partials/_header") %>
+
+      <div class="container">
+        <!-- Page-specific (main) content here -->
+        <div id="scroll-button-container">
+          <a href="#" id="scroll-button">
+            <i class="fas fa-angle-double-up"></i
+          ></a>
+        </div>
+        <section class="new-tweet">
+          <!-- <h2>Compose Tweet</h2> -->
+          <form method="POST" action="/tweets" id="submit-new-tweet">
+            <div id="alert"></div>
+            <textarea
+              placeholder="What are you humming about?"
+              name="text"
+              id="tweet-text"
+            ></textarea>
+            <footer>
+              <button type="submit">Tweet</button>
+              <output
+                name="counter"
+                class="counter"
+                for="tweet-text"
+                id="output-counter"
+                >140</output
+              >
+            </footer>
+          </form>
+          <!-- Body for tweets -->
+        </section>
+        <section class="all-tweets" id="all-tweets"></section>
+      </div>
+    </main>
+  </body>
+</html>

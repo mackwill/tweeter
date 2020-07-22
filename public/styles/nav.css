@@ -24,14 +24,14 @@ nav {
 }
 nav .navbar-right {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.25rem;
+  color: #ffffff;
 }
 nav .navbar-right a {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
   color: #ffffff;
+  margin-bottom: 0.25rem;
   text-decoration: none;
 }
 nav .navbar-right i {
@@ -39,10 +39,21 @@ nav .navbar-right i {
   top: 0;
   font-size: 1.25rem;
 }
+nav .navbar-right .nav-button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: #ffffff;
+  margin: 0 0.4rem 0 0.4rem;
+  border-radius: 0.3rem;
+  padding: 0.4rem;
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+}
 
 .navbar-right:hover > i {
-  animation: bounce 1s;
-  animation-iteration-count: infinite;
+  transform: scale(1.1);
 }
 
 span {
@@ -57,6 +68,9 @@ span {
   }
   nav i {
     color: #f09f27;
+  }
+  nav .nav-button {
+    background-color: #4056a1;
   }
 }
 
