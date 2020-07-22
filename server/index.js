@@ -105,6 +105,23 @@ app.post("/login", (req, res) => {
   res.redirect("/");
 });
 
+app.post("/register", (req, res) => {
+  console.log("register body: ", req.body);
+
+  const { username, email, password } = req.body;
+
+  users[username] = {
+    id: username,
+    firstName: "Pseudo",
+    lastName: "SuperPseudo",
+    email,
+    password: bcrypt.hashSync(password, saltRounds),
+  };
+
+  console.log("registered users: ", users);
+  res.render("home-page", { user: users[username], error: null });
+});
+
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });

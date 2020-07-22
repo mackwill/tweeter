@@ -55,85 +55,49 @@
     <%- include("partials/_nav") %>
     <main>
       <div id="register-wrapper">
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input
-                name="email"
-                type="email"
-                class="form-control"
-                id="inputEmail4"
-                placeholder="Email"
-              />
-            </div>
-            <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input
-                name="password"
-                type="password"
-                class="form-control"
-                id="inputPassword4"
-                placeholder="Password"
-              />
-            </div>
-          </div>
+        <form method="POST" action="/register">
           <div class="form-group">
-            <label for="inputAddress">Address</label>
+            <label for="username-form">Username</label>
             <input
-              name="address"
-              type="text"
+              name="username"
+              type="username"
               class="form-control"
-              id="inputAddress"
-              placeholder="1234 Main St"
+              id="username-form"
+              placeholder="Enter username"
             />
           </div>
           <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
+            <label for="email-form">Email</label>
             <input
-              name="address2"
-              type="text"
+              name="email"
+              type="email"
               class="form-control"
-              id="inputAddress2"
-              placeholder="Apartment, studio, or floor"
+              id="email-form"
+              placeholder="Enter email"
             />
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
-              <input
-                name="city"
-                type="text"
-                class="form-control"
-                id="inputCity"
-              />
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">Province</label>
-              <select name="province" id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label for="inputZip">Zip</label>
-              <input
-                name="postalCode"
-                type="text"
-                class="form-control"
-                id="inputZip"
-              />
-            </div>
+          <div class="form-group">
+            <label for="password-form">Password</label>
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="password-form"
+              placeholder="Password"
+            />
           </div>
           <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" />
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
+            <label for="password2-form">Enter Password Again</label>
+            <input
+              name="password2"
+              type="password"
+              class="form-control"
+              id="password2-form"
+              placeholder="Enter Password Again"
+            />
           </div>
-          <button type="submit" class="btn btn-primary">Sign in</button>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
 
