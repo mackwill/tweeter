@@ -61,7 +61,11 @@ const users = {
 app.use("/tweets", tweetsRoutes);
 
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { user: undefined, error: "No user" });
+});
+
+app.get("/register", (req, res) => {
+  res.render("register", { user: undefined, error: "No user" });
 });
 
 app.get("/", (req, res) => {
