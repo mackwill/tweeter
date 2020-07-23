@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // Basic express setup:
 
@@ -10,7 +10,6 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const cookieParser = require("cookie-parser");
 const cookieSession = require("cookie-session");
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
@@ -108,10 +107,18 @@ app.post("/login", (req, res) => {
 app.post("/register", (req, res) => {
   console.log("register body: ", req.body);
 
-  const { username, email, password } = req.body;
+  const { id, email, password, password2 } = req.body;
 
-  users[username] = {
-    id: username,
+  console.log("users[username]", users[id]);
+  if (users[id] !== undefined) {
+    console.log("This user already exists");
+    return;
+  } else if (password !== password2) {
+    console.log("Your passwords do not match");
+    return;
+  }
+  users[id] = {
+    id,
     firstName: "Pseudo",
     lastName: "SuperPseudo",
     email,
@@ -119,7 +126,7 @@ app.post("/register", (req, res) => {
   };
 
   console.log("registered users: ", users);
-  res.render("home-page", { user: users[username], error: null });
+  res.render("home-page", { user: users[id], error: null });
 });
 
 app.listen(PORT, () => {

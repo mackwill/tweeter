@@ -11,6 +11,7 @@ import {
   scrollHandler,
   showUserName,
   hideUserName,
+  checkUsername,
 } from "./event-handlers.js";
 import { renderTweets } from "./helpers.js";
 
@@ -20,6 +21,7 @@ $(document).ready(() => {
   $("#tweet-text").on("keyup", tweetCharHandler);
   $(".all-tweets").on("mouseenter", ".tweet", showUserName);
   $(".all-tweets").on("mouseleave", ".tweet", hideUserName);
+  // $(document).on("keyup", "#username-form-register", checkUsername);
 
   $(window).on("scroll", scrollHandler);
 
