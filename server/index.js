@@ -64,7 +64,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/register", (req, res) => {
-  res.render("register", { user: undefined, error: "No user" });
+  res.render("register", { error: null });
 });
 
 app.get("/", (req, res) => {
@@ -101,20 +101,25 @@ app.post("/login", (req, res) => {
   }
 
   req.session.username = users[username];
-  res.redirect("/");
+  res.render("home-page", { user: users[username], error: null });
 });
 
 app.post("/register", (req, res) => {
   console.log("register body: ", req.body);
 
-  const { id, email, password, password2 } = req.body;
+  const { email, password, password2 } = req.body;
+  const id = req.body.username;
 
   console.log("users[username]", users[id]);
   if (users[id] !== undefined) {
-    console.log("This user already exists");
+    res.render("register", {
+      error: `The user ${id} already exists. Please log in or enter a new username`,
+    });
     return;
   } else if (password !== password2) {
-    console.log("Your passwords do not match");
+    res.render("register", {
+      error: `Your passwords do not match. Please check them again.`,
+    });
     return;
   }
   users[id] = {

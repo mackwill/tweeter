@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Login Page</title>
+    <title>Tweeter - Register Page</title>
 
     <meta
       name="viewport"
@@ -55,7 +55,7 @@
     <%- include("partials/_nav") %>
     <main>
       <div id="register-wrapper">
-        <form method="POST" action="/register">
+        <form method="POST" action="/register" id="register-form">
           <div class="form-group">
             <label for="username-form">Username</label>
             <input
@@ -99,6 +99,11 @@
 
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <% if (error !== null) { %>
+        <div class="alert alert-warning" role="alert">
+          <%= error %>
+        </div>
+        <% } %>
       </div>
 
       <div class="alert alert-warning d-none"></div>

@@ -11,7 +11,7 @@ import {
   scrollHandler,
   showUserName,
   hideUserName,
-  checkUsername,
+  // registerHandler,
 } from "./event-handlers.js";
 import { renderTweets } from "./helpers.js";
 
@@ -21,11 +21,13 @@ $(document).ready(() => {
   $("#tweet-text").on("keyup", tweetCharHandler);
   $(".all-tweets").on("mouseenter", ".tweet", showUserName);
   $(".all-tweets").on("mouseleave", ".tweet", hideUserName);
+  $(".all-tweets").on("submit", ".tweet", hideUserName);
+
   // $(document).on("keyup", "#username-form-register", checkUsername);
 
   $(window).on("scroll", scrollHandler);
 
-  $(document).on("click", "#write-new-tweet", newTweetHandler);
+  // $(document).on("submit", "#register-form", registerHandler);
 
   // Load all of the tweets in the "database" and render them to the front page
   const loadTweets = () => {

@@ -37,6 +37,19 @@ const presentAlert = (tempTweet) => {
   return false;
 };
 
+// export const registerHandler = function (event) {
+//   event.preventDefault();
+//   const sendData = {
+//     user: $(event.target).find("#username-form-register").val(),
+//   };
+
+//   $.post("/register", sendData).then(() => {
+//     $.get("/register", (data) => {
+//       console.log("data: ", data);
+//     });
+//   });
+// };
+
 // Check if the tweets are properly entered
 // and then post to tweets if they are
 export const submitHandler = function (event) {
